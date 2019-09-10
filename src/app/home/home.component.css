@@ -1,0 +1,40 @@
+
+.container {
+    border: 2px solid;
+    padding: 5px;
+    width: 500px;
+    height: 700px;
+    position: relative;
+}
+
+.c1 {
+    float: left;
+}
+
+.c2 {
+    margin-left: 550px;
+}
+
+.blob {
+    border: 1px solid;
+    position: absolute
+}
+
+.b1 {
+    height: 80px;
+    background-color:#FFC
+}
+
+.b2 {
+    width: 80%;
+    height: 30px;
+    margin-left: 10%;
+    padding-top: 5px;
+    float: left;
+}
+
+.object {
+    width: 98%;
+    height: 500px;
+    padding: 3px;
+}

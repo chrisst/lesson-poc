@@ -1,0 +1,44 @@
+<h3>Home Component</h3>
+
+<div class="container c1">
+    <p></p>
+    <!-- more restrictive  -->
+    <p></p>
+    <div *ngFor="let foo of fooz" class="blob"
+    [style.width.px]="foo.width"
+    [style.height.px]="foo.height"
+    [style.left.px]="foo.left"
+    [style.top.px]="foo.top"
+    [style.z-index]="foo.z"
+    >
+        <img *ngIf="foo.type == 'image'"
+        src="{{foo.source}}"
+        [style.width.px]="foo.width"
+        [style.height.px]="foo.height"
+        [style.left.px]="foo.left"
+        [style.top.px]="foo.top"
+        >
+        <p *ngIf="foo.type == 'text'">
+            {{foo.text}}
+        </p>
+    </div>
+
+    <p></p>
+
+    <!-- better because it's driven by css classes -->
+    <!-- simpler JSON, way more flexible and powerful -->
+    <p></p>
+
+    <!-- <div *ngFor="let foo of fooz"
+    [ngClass]="getClass(foo)"
+    >
+            {{foo.text}}
+    </div>
+</div> -->
+
+<div class="container c2">
+    <!-- <div *ngFor="let foo of fooz"> -->
+        <textarea class="object" [(ngModel)]='foozValue'>
+        </textarea>
+    <!-- </div> -->
+</div>
