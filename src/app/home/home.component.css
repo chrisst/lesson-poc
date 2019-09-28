@@ -38,3 +38,25 @@
     height: 500px;
     padding: 3px;
 }
+
+.bullet {
+    /* make it look like bullet text */
+}
+
+.blue {
+    color: blue
+}
+
+.transitionable {
+    transition: top 10s, left 10s;
+}
+
+.les1-image-postition-one {
+    top: 0px;
+    left: 0px;
+}
+
+les1-image-postition-one {
+    top: 100px;
+    left: 100px;
+}

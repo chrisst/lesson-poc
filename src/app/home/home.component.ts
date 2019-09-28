@@ -61,7 +61,28 @@ export class HomeComponent {
       source: "https://media.giphy.com/media/mXwxPJjb1SzlhwMHfd/giphy.gif",
       top: 250,
       z: 2
-    }
+    },
+    {
+      type: "text",
+      text: "* pain has probably prevented.... you enjoy",
+      class: ["bullet"],
+      start_time: 10,
+      top: 100,
+    },
+    {
+      type: "text",
+      text: "* pain releif is right around the corner",
+      class: ["bullet", "blue"],
+      start_time: 12,
+      top: 100,
+    },
+    {
+      type: "html",
+      text: "* it is important to be physically",
+      class: ["bullet"],
+      start_time: 15,
+      top: 100,
+    },
   ]
 
   get foozValue () {
