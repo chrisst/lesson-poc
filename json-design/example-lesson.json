@@ -1,0 +1,44 @@
+{
+    "Lesson": {
+        "Pages": [
+            {
+                "title": "page1",
+                "image": {},
+                "text": {}
+            },
+            {
+                "title": "page 2",
+                "content": {
+                    "image": {
+                        "url": "http://stuff.stuff",
+                        "x1": 1,
+                        "y1": 50,
+                        "start_time": 50
+                        "transitions": {
+                            "0s": ["image", "transitionable", "les1-image-postition-one"],
+                            "10s": ["image", "transitionable", "les1-image-postition-two"]
+                        }
+                    },
+                    "image": {
+                        "start_time": 70
+
+                    },
+                    "html": {
+                        "content": "<div><li>pain has probabl</li></div>",
+                        "start_time": 0
+                    },
+                    "text": {
+                        "content": "pain relief",
+                        "start_time": 10
+                    },
+                    "text": {},
+                    "text": {},
+                    "text": {},
+                    "text": {}
+                }
+            }
+        ],
+        "Title": "Movement",
+        "meta stuff": "blah"
+    }
+}

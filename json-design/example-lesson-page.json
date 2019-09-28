@@ -1,0 +1,22 @@
+{
+    "Page": {
+        "definitions": {
+            "Image ": {
+                "type": "object",
+                "properties": {
+                    "image_file": {
+                        "type": "string",
+                        "description": "relative location of the file"
+                    },
+                    "x1": {
+                        "type": "integer",
+                        "": ""
+                    },
+                    "y1": {},
+                    "x2": {},
+                    "y2": {}
+                }
+            }
+        }
+    }
+}
