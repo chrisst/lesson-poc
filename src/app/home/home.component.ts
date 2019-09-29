@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component, ViewChildren, Renderer} from '@angular/core';
 
 @Component({
   selector: 'home',
@@ -7,16 +7,52 @@ import {Component} from '@angular/core';
 })
 
 
+// class SomeCmp implements AfterViewInit {
+
+// }
 
 export class HomeComponent {
+  @ViewChildren('lessonContent') content;
+
+  ngAfterViewInit() {
+    console.log(this.content.toArray()[0])
+  }
+
+  constructor(public renderer: Renderer) {
+  }
+
   getClass(foo) {
     if (foo['class']) {
       console.log("zomg foo")
-      console.log(foo['class'])
+      // console.log(foo['class'])
       return ["blob"].concat(foo['class'])
     }
     return ["blob"];
- }
+  };
+
+  countdown = 0
+  ngOnInit() {
+    this.countdown = 0
+
+    setInterval(()=> {
+      this.countdown = this.countdown + 1
+
+      for (var index in this.fooz) {
+        if (this.fooz[index].hasOwnProperty('transitions') ) {
+            let thing = (this.fooz[index] as any).transitions
+            if (thing[this.countdown]) {
+              console.log("snap it's countdown time!")
+              console.log(this.content.toArray()[index])
+              
+              for (let cssClass of thing[this.countdown]) {
+                this.content.toArray()[index].nativeElement.classList.toggle(cssClass)
+              }
+            }
+          }
+      }
+    }, 1000);
+  }
+
 
   fooz = [
     {
@@ -48,12 +84,14 @@ export class HomeComponent {
     {
       type: "image",
       text: "holy crap an image",
-      left: 200,
-      top: 200,
       width: 100,
       height: 100,
       source: 'https://i.redd.it/b4beo8zdfjl31.jpg',
-      // class: ["b2"],
+      class: ["med-transition", "far-left"],
+      transitions: {
+        5: ["far-left", "mid-left"],
+        11: ["far-left", "mid-left"],
+      },
       z: 3
     },
     {
@@ -61,27 +99,6 @@ export class HomeComponent {
       source: "https://media.giphy.com/media/mXwxPJjb1SzlhwMHfd/giphy.gif",
       top: 250,
       z: 2
-    },
-    {
-      type: "text",
-      text: "* pain has probably prevented.... you enjoy",
-      class: ["bullet"],
-      start_time: 10,
-      top: 100,
-    },
-    {
-      type: "text",
-      text: "* pain releif is right around the corner",
-      class: ["bullet", "blue"],
-      start_time: 12,
-      top: 100,
-    },
-    {
-      type: "html",
-      text: "* it is important to be physically",
-      class: ["bullet"],
-      start_time: 15,
-      top: 100,
     },
   ]
 
@@ -91,7 +108,7 @@ export class HomeComponent {
 
   set foozValue (v) {
     try{
-    this.fooz = JSON.parse(v);}
+      this.fooz = JSON.parse(v);}
     catch(e) {
       console.log('error occored while you were typing the JSON');
     };

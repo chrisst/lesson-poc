@@ -1,15 +1,18 @@
 <h3>Home Component</h3>
 
+<div class="countdown">{{countdown}}</div>
 <div class="container c1">
     <p></p>
     <!-- more restrictive  -->
     <p></p>
-    <div *ngFor="let foo of fooz" class="blob"
+    <div #lessonContent *ngFor="let foo of fooz" class="blob med-transition"
+    [ngClass]="foo.class"
     [style.width.px]="foo.width"
     [style.height.px]="foo.height"
     [style.left.px]="foo.left"
     [style.top.px]="foo.top"
     [style.z-index]="foo.z"
+    style="transition: all 2s linear;"
     >
         <img *ngIf="foo.type == 'image'"
         src="{{foo.source}}"

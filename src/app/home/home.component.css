@@ -60,3 +60,17 @@ les1-image-postition-one {
     top: 100px;
     left: 100px;
 }
+
+.med-transition {
+    transition: all 2s linear;
+}
+
+.far-left {
+    left: 0px;
+    top: 200px;
+}
+
+.mid-left {
+    left: 200px;
+    top: 150px;
+}
